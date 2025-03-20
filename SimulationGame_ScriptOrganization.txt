@@ -1,0 +1,67 @@
+## Simulation Game Script Organization
+
+### 1. Core Categories
+
+#### *Controllers*
+- Manage player input, UI interactions, and game state changes.
+- Examples:
+  - GameController → Handles the overall game loop and state transitions.
+  - UIController → Manages UI interactions (buttons, menus, etc.).
+  - CharacterController → Handles player movement and animations.
+
+#### *Managers*
+- Handle global game systems like saving, audio, and event handling.
+- Examples:
+  - SceneManager → Handles scene loading and unloading.
+  - AudioManager → Controls sound effects and background music.
+  - SaveManager → Manages saving and loading game data.
+  - EventManager → Handles game-wide events (Observer Pattern).
+
+#### *Helpers (Utility Scripts)*
+- Contain reusable functions that don’t belong to a single system.
+- Examples:
+  - MathHelper → Handles calculations (e.g., distance, rounding).
+  - TimeHelper → Converts in-game time formats.
+  - AnimationHelper → Utility functions for animations.
+
+#### *Models (Data Structures)*
+- Define data structures for characters, items, etc.
+- Examples:
+  - CharacterData → Stores character stats and attributes.
+  - ItemData → Stores inventory item details.
+  - QuestData → Stores missions and objectives.
+
+#### *Game Systems (Simulation Logic)*
+- Handles gameplay mechanics specific to your simulation.
+- Examples:
+  - EconomySystem → Manages income, expenses, and transactions.
+  - WorkSystem → Handles job and skill progression.
+  - NeedsSystem → Manages hunger, energy, and mood levels.
+  - InteractionSystem → Handles object and NPC interactions.
+
+#### *AI & NPCs*
+- Manages NPC behavior and interactions.
+- Examples:
+  - AIController → Controls NPC logic and pathfinding.
+  - DialogueSystem → Manages NPC conversations.
+  - TaskScheduler → Controls NPC schedules (e.g., work, rest).
+
+#### *UI & User Experience*
+- Controls user interface and feedback systems.
+- Examples:
+  - HUDManager → Manages the game’s heads-up display.
+  - NotificationSystem → Handles pop-up messages and alerts.
+  - TooltipManager → Controls UI tooltips and descriptions.
+
+---
+
+### 2. Folder Structure
+
+Scripts/
+├── Controllers/ (GameController, CharacterController, UIController, etc.)
+├── Managers/ (SceneManager, SaveManager, AudioManager, etc.)
+├── Helpers/ (MathHelper, TimeHelper, AnimationHelper, etc.)
+├── Models/ (CharacterData, ItemData, QuestData, etc.)
+├── GameSystems/ (EconomySystem, WorkSystem, NeedsSystem, etc.)
+├── AI/ (AIController, TaskScheduler, etc.)
+├── UI/ (HUDManager, TooltipManager, NotificationSystem, etc.)
